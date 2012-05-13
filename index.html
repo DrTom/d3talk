@@ -102,7 +102,7 @@ var slides = [
     "line.html",
     "onmouseover.html",
     "summary.html",
-	"toread.html",
+	  "toread.html",
     "layout.html",
     "layout_1.html"
 ];
@@ -186,9 +186,11 @@ function step(delta) {
     nextIndex = currentIndex >= slides.length - 1 ? 0 : currentIndex + 1;
     previousIndex = currentIndex <= 0 ? slides.length - 1 : currentIndex - 1;
   }
-  previous.transition().delay(750).attr("src", slides[previousIndex] + query);
-  current.transition().delay(250).attr("src", slides[currentIndex] + query);
-  next.transition().delay(750).attr("src", slides[nextIndex] + query);
+  console.log(query);
+  console.log(slides[previousIndex]);
+  previous.transition().delay(750).attr("src", slides[previousIndex]);
+  current.transition().delay(250).attr("src", slides[currentIndex]);
+  next.transition().delay(750).attr("src", slides[nextIndex]);
   location.hash = currentIndex;
 }
 
